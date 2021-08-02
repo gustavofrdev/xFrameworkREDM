@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+* {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.insert-id-style {
+    padding: 3px;
+    font-size: 14px;
+    border-width: 0px;
+    border-color: #ffffff;
+    background-color: transparent;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: -50px 0px 0px rgba(66, 66, 66, .0);
+    text-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+}
+
+.insert-mensagem-style:focus {
+    outline: none;
+}
+
+.insert-mensagem-style {
+    padding: 55px;
+    font-size: 14px;
+    border-width: 0px;
+    border-color: #ffffff;
+    background-color: transparent;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: -50px 0px 0px rgba(66, 66, 66, .0);
+    text-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+}
+
+.insert-mensagem-style:focus {
+    outline: none;
+}
+
+textarea:focus, input:focus {
+    outline: 0;
+}
+
+*:focus {
+    outline: 0;
+}
+
+::placeholder {
+    color: black;
+    opacity: 0.3;
+}
+
+.container {
+    position: absolute;
+    margin-left: 80%;
+    margin-right: 30%;
+    margin-top: 25%;
+    width: 15%;
+    height: 450px;
+    background-image: url("https://i.pinimg.com/originals/ed/1e/d0/ed1ed046ddaadd9da1bdaa4fd05c86bd.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -1.0em;
+    background-position-y: -0.7em;
+}
+
+.insert-id-container {
+    width: 100%;
+    margin-right: 50%;
+    margin-top: 5%;
+    font-size: 20px;
+}
+
+.error {
+    margin-right: 100%;
+    margin-top: -5%;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    width: 80%;
+    margin-left: 10px
+}
+
+.submit-button-container {
+    margin-right: 50%;
+    margin-top: -5%;
+    color: red;
+    font-size: 13px;
+    width: 50%;
+    margin: 10px;
+}
+
+.submit-button {
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 13px;
+    text-decoration: none;
+    transition: all .5s linear;
+}
+
+.submit-button:hover {
+    color: Red;
+}
+
+.submit-button:active {
+    position: relative;
+    top: 1px;
+}
+
+.reader {
+    max-width: 100%;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
+}
+
+@media (max-width: 1176px) {
+    .container {
+        margin-left: 50%;
+        width: 30%;
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 1152px) {
+    .container {
+        width: 34%;
+    }
+}
+
+@media (max-width: 1680px) {
+    .container {
+        margin-left: 70%;
+        width: 18%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .container {
+        margin-left: 70%;
+        width: 18%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        margin-left: 70%;
+        width: 20%;
+    }
+}
+
+@media (max-width: 1360px) {
+    .container {
+        margin-left: 50%;
+        width: 25%;
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 1366px) {
+    .container {
+        margin-left: 50%;
+        width: 20%;
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        margin-left: 50%;
+        width: 23%;
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 50%;
+        width: 27%;
+        margin-top: 15%;
+    }
+}

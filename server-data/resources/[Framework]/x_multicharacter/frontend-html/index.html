@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="css/plugins.css" media="all" rel="stylesheet" type="text/css">
+	<link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CPoppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CRacing+Sans+One" rel=
+	"stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+	<style>
+		body {
+			display: block;
+			background: rgba(0,0,0,0);
+		}
+		.charSlot {
+			opacity: 0.75;
+		}
+		.newChar {
+			cursor: pointer;
+		}
+		#index .card, #index .jumbotron{
+			display: block;
+			background: rgba(0, 0, 0, 0.45);
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <div id="index" style="display: block">
+        <div id="fullpage">
+            <div class="section overlay overlay-dark-60 upper-page">
+                <div class="film-grain"></div> -->
+                <!-- <div class="horizontal-stripes"></div> -->
+                <!-- <div class="section-bg-home"></div> -->
+                <!-- <div class="intro-wrapper fadeIn-element welcome-message">
+                    <div class="center-container-home">
+                        <div class="center-block-home">
+                            <div class="inner-divider-half"></div>
+							<div class="intro-title"><img src="logo.png" width="550px"></div>
+							<div class="intro-subtitle">
+                               ENTER PARA INICIAR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+	</div> -->
+
+	<div id="index2" style="display: none; height: 100vh; width: 100vw;"><div class="d-flex w-100 h-100"></div></div>
+
+	<div id="loading" style="display: none;">
+		<div class="container mx-auto mt-5 text-center"> 
+			<div class="spinner-border mt-5 text-light" role="status"></div>          
+			<h5 id="l-text" class="mt-2 text-light">Buscando informações sobre sua vida...</h5>
+		</div>
+	</div>
+
+	<div class="modal fade" id="charForm" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-center">Novo Personagem</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="charAForm">
+						<div class="form-group">
+							<label for="charName">Nome</label>
+							<input type="text" class="form-control" id="charName" placeholder="John" required />
+						</div>
+						<div class="form-group">
+							<label for="charName">Último Nome</label>
+							<input type="text" class="form-control" id="charSName" placeholder="Doe" required />
+						</div>
+						<div class="modal-footer">
+							<button type="submit" id="charConf" class="btn btn-success">Criar</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="charDelConf" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Queres confirmar ?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Tem certeza de que quer apagar este personagem ?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="charDel2ConfBtn" class="btn btn-danger">Apagar</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script>
+		$(() => {
+			let ok = false;
+			let selected = -1;
+			let chars = [null, null];
+	
+			const select = (i) => selected = i;
+			const remove = () => {
+				chars[selected] = null;
+
+				$.post('http://x_multicharacter/DeleteCharacter',
+					JSON.stringify({
+						id: selected
+					})
+					);
+			}
+
+			const formatarNumero = (n) => {
+				var n = n.toString();
+				var r = '';
+				var x = 0;
+
+				for (var i = n.length; i > 0; i--) {
+					r += n.substr(i - 1, 1) + (x == 2 && i != 1 ? '.' : '');
+					x = x == 2 ? 0 : x + 1;
+				}
+
+				return r.split('').reverse().join('');
+			}
+
+			const loadChars = () => {
+				$('#index2').children('div').html('');
+		
+				for(let i in chars) {
+				
+					if(chars[i] === null){
+						$('#index2').children('div').append(
+							'<div class="charSlot newChar card mx-auto my-auto text-center bg-dark text-light" style="width: 20vw; height: 50vh;">' +
+							'<div class="card-body">' +
+							'<h5 class="createChar card-title">+</h5>' +
+							'<hr>' +
+							'<p class="lead">Criar Personagem</p>' +
+							'</div>' +
+							'</div>'
+							);
+					} else {
+						$('#index2').children('div').append(
+							'<div id="slot' + chars[i].id + '" class="charSlot card mx-auto my-auto text-center bg-dark text-light" style="width: 20vw; height: 50vh; font-family: Poppins, sans-serif;">' +
+							'<div class="card-body">' +
+							'<h5 class="createChar card-title">' + chars[i].name + ' ' + chars[i].firstname + '</h5>' +
+							'<hr>' +
+							'<p class="lead">Identidade: ' + chars[i].id + '</p>' +
+							'<p class="lead">RG: ' + chars[i].RG + '</p>' +
+							'</div>' +
+							'<div class="card-footer">' +
+							'<button class="charPlay btn btn-success mr-3">Entrar</button>' +
+							// '<button class="charDelete btn btn-danger">Apagar</button>' +
+							'</div>' +
+							'</div>'
+							);
+						$('#slot' + chars[i].id).removeClass('newChar')
+					}
+				}
+				fun2();
+			}
+
+			const fun2 = () => {
+				const play = document.getElementsByClassName('charPlay');
+				for(let i=0;i<play.length;i++){
+					$(play[i]).click(() => {
+						$.post('http://x_multicharacter/CharacterChosen',
+							JSON.stringify({
+								id: play[i].parentElement.parentElement.id.split('t',2)[1]
+							})
+							);
+						$('body').hide();
+					})
+				}
+
+				const del = document.getElementsByClassName('charDelete');
+				for(let i=0;i<del.length;i++){
+					$(del[i]).click(() => {
+						select(parseInt(del[i].parentElement.parentElement.id.split('t',2)[1]));
+						$('#charDelConf').modal('show');
+					})
+				}
+
+				const divs = document.getElementsByClassName('newChar');
+				for(let i = 0; i < 4; i++) {
+					$(divs[i]).hover(() => {
+						$(divs[i]).css('opacity', '0.25');
+					}, () => {
+						$(divs[i]).css('opacity', '0.75');
+					});
+
+					$(divs[i]).click(() => {
+						let HaveAnotherPlayer = true  
+						console.log(chars[0])
+						if(chars[0] == undefined){
+							HaveAnotherPlayer = false
+						}
+						 console.log("novo", HaveAnotherPlayer)
+						$.post('http://x_multicharacter/CriarPersonagem',JSON.stringify({ 
+							IsSecond: HaveAnotherPlayer 
+						}));
+					});
+				}
+			}
+
+			$('#charDel2ConfBtn').click(() => {
+				remove();
+			})
+
+			window.addEventListener('message',(event) => {
+				if(event.data.remBody){
+					$('body').hide();
+				}
+				if (event.data.CanStart == "ABRIR" ){
+					console.log("abrir")
+					ok = true;
+					$('#index').hide();
+					$('#loading').show();
+
+					// loadChars();
+
+					setTimeout(() => {
+						$('#l-text').html('Esperar Personagens...');
+						setTimeout(() => {
+							$('#loading').hide();
+							$('#index2').show();
+						}, 2500);
+					}, 2500);
+				}
+			});
+
+			window.addEventListener('message',(event) => {
+				if (event.data.action === 'openui') {
+			
+					ok = false;
+					$('body').show();
+					$('#index').show();
+					$('#index2').hide();
+					$('#loading').hide();
+					console.log(event.data.characters.length)
+					if (event.data.characters.length > 0){
+						$.each(event.data.characters,function(k,v){
+							chars[k] = v
+						})
+					}
+					loadChars();
+				} else if (event.data.action === 'update') {
+					chars = [null, null];
+					if (event.data.characters.length > 0){
+						$.each(event.data.characters,function(k,v){
+					
+							chars[k] = v
+						})
+					}
+					$('#charDelConf').modal('hide');
+					$('#index2').hide();
+					// $('#l-text').html('Apagar Personagem...');
+					$('#loading').show();
+					setTimeout(() => {
+						$('#l-text').html('Aplicar Alterações...');
+						setTimeout(() => {
+							$('#loading').hide(); 
+							console.log("loadchar 272")
+							loadChars();
+							$('#index2').show();
+						},2500)
+					},2500);
+				}
+			});
+
+			$('#charAForm').submit((e) => {
+				e.preventDefault();
+				$('#charForm').modal('hide');
+				$('#index2').hide();
+
+				$('#l-text').html('Creating character...');
+				$('#loading').show();
+				
+				let data = {slot: selected, name: $('#charName').val(), name2: $('#charSName').val() }
+				console.log("criar?")
+				$.post('http://x_multicharacter/LetsToCharacterCreator',JSON.stringify({ fields: data }));
+				setTimeout(() => {
+					$('#l-text').html('Criar Personagem...');
+					setTimeout(() => {
+						$('#loading').hide();
+					},2500)
+				},2500);
+			});
+		});
+	</script>
+	<script src="js/plugins.js"></script> 
+	<script src="js/rexbel.js"></script>
+</body>
+</html>

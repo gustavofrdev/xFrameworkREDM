@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Lojinha de Conveniencia</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+      rel="stylesheet">
+   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+   <div class="actionmenu" style="display: none;">
+      <div class="conteudo">
+         <div class="menu">
+            <div class="esctitle"><span>ESC</span> PARA SAIR</div>
+            <div class="titleMenu">Venda do Ilegal</div>
+            <!-- <div class="carteira"><i class="fas fa-wallet" style="color:#258A40;"></i> <span>545</span></div> -->
+         </div>
+         <div class="parte2">
+            <div class="sidenav">
+               <a class="catSessao item-category category_item" category="roubo_tumulos" id="roubo_tumulos"><i
+                     class="fas fa-border-all"></i> Vendas</a>
+                     <a class="catSessao item-category category_item" category="roubos_geral" id="roubos_geral"><i
+                        class="fas fa-border-all"></i> Compras</a>
+            </div>
+            <div class="itens">
+               <section class="sessaoItens">
+                  <div class="conteudoSessao">
+                     <div class="itemSessao item-item" category="roubo_tumulos">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/oldbuckle.png" style = "width: 13em;">
+                           </div>
+                           <div class="tituloItem">Fivela Velha</div>
+                           <div class="descricaoItem">Fivela roubada de um túmulo</div>
+                           <div class="valorItem">R$ 40</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="oldbuckle" class="menuoption" >VENDER</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubo_tumulos">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/oldwatch.png">
+                           </div>
+                           <div class="tituloItem">Relógio Velho</div>
+                           <div class="descricaoItem">Relógio roubado de um túmulo.</div>
+                           <div class="valorItem">R$ 50</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="oldwatch"
+                              class="menuoption">VENDER</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubo_tumulos">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/rubyring.png">
+                           </div>
+                           <div class="tituloItem">Anel de Rúbi</div>
+                           <div class="descricaoItem">Anel de Rúbi de um túmulo</div>
+                           <div class="valorItem">R$ 60</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="rubyring"
+                              class="menuoption">VENDER</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubo_tumulos">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/goldtooth.png">
+                           </div>
+                           <div class="tituloItem">Dente de Ouro</div>
+                           <div class="descricaoItem">Dente de Ouro roubado de um túmulo</div>
+                           <div class="valorItem">R$ 70</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="goldtooth"
+                              class="menuoption">VENDER</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubo_tumulos">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/piratecoin.png">
+                           </div>
+                           <div class="tituloItem">Moeda Pirata</div>
+                           <div class="descricaoItem">Moeda Pirata roubada de de um túmulo</div>
+                           <div class="valorItem">R$ 60</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="piratecoin"
+                              class="menuoption">VENDER</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubos_geral">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/bomba.png">
+                           </div>
+                           <div class="tituloItem">Bomba</div>
+                           <div class="descricaoItem">Bomba usada para fazer roubos gerais</div>
+                           <div class="valorItem">R$ 50</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="bomba_comprar"
+                              class="menuoption">COMPRAR</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubos_geral">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/lockpick.png">
+                           </div>
+                           <div class="tituloItem">Lockpick</div>
+                           <div class="descricaoItem">Lockpick usada para fazer roubos gerais</div>
+                           <div class="valorItem">R$ 100</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="lockpick_comprar"
+                              class="menuoption">COMPRAR</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubos_geral">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/semente_cocaina.png">
+                           </div>
+                           <div class="tituloItem">Semente de Cocaina</div>
+                           <div class="descricaoItem"></div>
+                           <div class="valorItem">R$ 30</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="semente_cocaina_comprar"
+                              class="menuoption">COMPRAR</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubos_geral">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/semente_maconha.png">
+                           </div>
+                           <div class="tituloItem">Semente de Maconha</div>
+                           <div class="descricaoItem"></div>
+                           <div class="valorItem">R$ 30</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="semente_maconha_comprar"
+                              class="menuoption">COMPRAR</button>
+                        </div>
+                     </div>
+                     <div class="itemSessao item-item" category="roubos_geral">
+                        <div class="item-info">
+                           <div class="fotoItem">
+                              <img src="images/bandana.png">
+                           </div>
+                           <div class="tituloItem">Bandana</div>
+                           <div class="descricaoItem"></div>
+                           <div class="valorItem">R$ 30</div>
+                        </div>
+                        <div class="pagamento">
+                           <button data-action="bandana_comprar"
+                              class="menuoption">COMPRAR</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </section>
+         </div>
+      </div>
+   </div>
+   </div>
+   <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>

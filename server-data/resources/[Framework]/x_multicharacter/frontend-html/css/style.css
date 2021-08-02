@@ -1,0 +1,454 @@
+﻿a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box
+}
+body,
+html {
+    height: 100%;
+    line-height: 170%
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block
+}
+ol,
+ul {
+    list-style: none
+}
+blockquote,
+q {
+    quotes: none
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: "";
+    content: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+:focus {
+    outline: 0
+}
+.upper-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    margin: 0
+}
+.all-bg-wapper {
+    position: relative;
+    height: 100vh
+}
+.wrap-teardrop {
+    overflow: hidden
+}
+.horizontal-stripes,
+.horizontal-stripes-sections {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    z-index: 10
+}
+.running-teardrop {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, .15)
+}
+.running-teardrop::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3px;
+    -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
+    -ms-animation-direction: normal;
+    -o-animation-direction: normal;
+    animation-direction: normal
+}
+
+@-webkit-keyframes teardrop {
+    0% {
+        top: -10%;
+        opacity: 0;
+        height: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        top: 100%;
+        height: 35%
+    }
+}
+@-ms-keyframes teardrop {
+    0% {
+        top: -10%;
+        opacity: 0;
+        height: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        top: 100%;
+        height: 35%
+    }
+}
+@keyframes teardrop {
+    0% {
+        top: -10%;
+        opacity: 0;
+        height: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        top: 100%;
+        height: 35%
+    }
+}
+@-webkit-keyframes teardrop-reverse {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+        height: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        bottom: 100%;
+        height: 35%
+    }
+}
+@-ms-keyframes teardrop-reverse {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+        height: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        bottom: 100%;
+        height: 35%
+    }
+}
+@keyframes teardrop-reverse {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+        height: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        bottom: 100%;
+        height: 35%
+    }
+}
+.no-teardrop {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, .15)
+}
+.film-grain {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background: url(../img/effects/film-grain.gif) repeat top left;
+    opacity: .05;
+    -moz-opacity: .05;
+    -webkit-opacity: .05;
+    z-index: 1;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none
+}
+.film-grain.film-grain-glitch {
+    z-index: 6
+}
+.film-grain.film-grain-circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%
+}
+.inner-divider,
+.inner-divider-half,
+.inner-divider-half-details,
+.inner-divider-ultra-half {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background: 0 0;
+    z-index: -1
+}
+.inner-divider {
+    height: 50px
+}
+@media all and (min-width: 1920px) {
+    .inner-divider {
+        height: 75px
+    }
+}
+.inner-divider-half {
+    height: 15px
+}
+@media all and (min-width: 1920px) {
+    .inner-divider-half {
+        height: 25px
+    }
+}
+.inner-divider-half-details {
+    height: 50px
+}
+.inner-divider-ultra-half {
+    height: 15px
+}
+.center-container-home {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    background: 0 0;
+    text-align: center;
+    z-index: 10
+}
+.center-block-home {
+    display: table-cell;
+    vertical-align: middle
+}
+.intro-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10
+}
+
+.intro-subtitle {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    text-shadow: 1px 1px 2px #111;
+    margin-bottom: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+.intro-subtitle span {
+    position: relative;
+    display: inline-block;
+    padding-right: 90px;
+    line-height: 1
+}
+@media only screen and (max-width: 640px) {
+    .intro-subtitle span {
+        padding-right: 50px
+    }
+}
+.intro-subtitle span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 0;
+    width: 60px;
+    height: 0;
+    margin-top: -1px
+}
+@media only screen and (max-width: 640px) {
+    .intro-subtitle span:before {
+        width: 30px
+    }
+}
+.intro-subtitle span:before {
+    border-top: 1px solid #fff
+}
+.welcome-message-reveal,
+.welcome-message-reveal-hide {
+    opacity: 0;
+    -moz-opacity: 0;
+    -webkit-opacity: 0;
+    -webkit-transform: scale(.75);
+    -moz-transform: scale(.75);
+    -ms-transform: scale(.75);
+    -o-transform: scale(.75);
+    transform: scale(.75)
+}
+.welcome-message-reveal,
+.welcome-message-reveal-hide,
+.welcome-message-reveal-show {
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -ms-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    transition: all 1.5s ease
+}
+.welcome-message-reveal-show {
+    opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+}
+
+#index2 p h5 .card-footer { 
+    font-family: Poppins, sans-serif;
+    text-shadow: 3px #000000;
+}
+
+#index p h5 button { 
+    font-family: Poppins, sans-serif;
+    text-shadow: 3px #000000;
+}
+
+#l-text {
+    font-family: Poppins, sans-serif;
+    text-shadow: 3px #000000;
+}
+
+.modal-title .modal-body .modal-footer { 
+    font-family: Poppins, sans-serif;
+    text-shadow: 2px #000000;
+}
+
+.card-body { 
+    font-family: Poppins, sans-serif;
+    background-color:transparent;
+    border-radius: 1px;
+
+}

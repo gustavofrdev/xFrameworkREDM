@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="boostrap-custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@1&display=swap" rel="stylesheet">
+    <script src="./script.js" type="text/javascript"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="tinymce_project.js" referrerpolicy="origin"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Jornal</title>
+</head>
+<body id = "js-body" style="display: none;">  
+    <div class="screen_lim" id="js-screen">
+        <input id = "js-homeBtn" onclick="utils.homeBtn()" style = "display: none;" class = "homeBtn" type="image" src="assets/homeBtn.png"></input>
+        <div id="js-news-selector" class="container" style="display: none;">
+            <div id="js-news-actual-news" class="div-noticiais-now">
+                <div class="news_cover">
+                    <!-- <h1 class = "header" id = "js-news-title"><img src = "assets/header.png"></img></h1> -->
+                    <!-- aqui estará o front-end da notícia -->
+                    <section id="js-contents-wrapper">
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <div id="js-news-write" class="container" filter="url(#blur)" style="display: none;">
+            <h1 style="color: white;" id="js-textarea-title-mother"> <!-- título vai aqui !--> </h1>
+            <div id="js-news-content-writer!">
+                <textarea style="border-radius: 1px;" id="content">
+                </textarea>
+                <button class="send-button" id="js-get-content"
+                    onclick="writer.sendContent(tinymce.get('content').getContent())">Enviar conteúdo</button>
+                <button style="text-align: right;" class="cancel-button" id="js-cancel-content"
+                    onclick="utils.closeAll()">Cancelar tudo</button>
+            </div>
+        </div>
+
+        <div id="js-news-min" class="container" style="display: none;">
+            
+            <div class = "blocker" style = "background-color: url('assets/readMode.png');"></div>
+            <input id = "js-nextBtn" onclick="utils.nextBtn()" style = "display: none;" class = "nextBtn" type="image" src="assets/nextBtn.png" ></input>
+            <input id = "js-previousBtn" onclick="utils.previousBtn()" style = "display: none;" class = "previousBtn" type="image" src="assets/previousBtn.png" ></input>
+            <div id = "js-display-read" class="news_cover">
+                <div class = "noticia" id = "js-notice-here">
+                    Você está vendo: js-notice-here
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

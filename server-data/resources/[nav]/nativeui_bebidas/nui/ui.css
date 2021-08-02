@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+div {
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+::selection {
+	background: transparent;
+}
+
+#actionmenu {
+	top: 50%;
+	left: 50%;
+	display: none;
+	position: fixed;
+	transform: translate(-50%, -50%);
+}
+
+#actionmenu button {
+	-webkit-appearance: none;
+	background: #F00000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #DC281E, #F00000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #DC281E, #F00000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+	
+	background-size: 300%;
+	border: none;
+	border-radius: 15px 50px 30px 5px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	text-transform: uppercase;
+	font-family: 'Patua One', cursive;
+	font-size: 0.9em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 2.5rem;
+	letter-spacing: 0.1em;
+	margin-top: 10px;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 18rem;
+}
+
+#actionmenu button:hover {
+	animation-name: gradient;
+	-webkit-animation-name: gradient;
+	animation-duration: 2s;
+	-webkit-animation-duration: s;
+	animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 10%;
+	}
+
+	100% {
+		background-position: 100%;
+	}
+}
+
+l {
+	width: 75%;
+	text-align: left;
+	position: relative;
+	left: 10px;
+	float: left;
+}
+
+r {
+	color: rgba(255, 255, 255, 0.6);
+	width: 25%;
+	position: relative;
+	right: 15px;
+	;
+	text-align: right;
+	float: left;
+}
+
+i {
+	font-size: 24px;
+	text-align: left;
+	position: fixed;
+	left: 10px;
+}
+
+i:hover {
+	color: #07bd53;
+}
